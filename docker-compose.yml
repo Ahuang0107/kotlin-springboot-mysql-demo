@@ -1,0 +1,11 @@
+services:
+  mysql:
+    container_name: demo_mysql_database
+    image: mysql
+    ports:
+      - "13308:3306"
+    volumes:
+      - ./files/mounted/conf/my.cnf:/etc/mysql/my.cnf
+      - ./files/mounted/mysql-files:/var/lib/mysql-files
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
